@@ -23,16 +23,16 @@ require("lazy").setup({
     },
     defaults = {
         -- should plugins be lazy-loaded?
-        lazy = true, 
+        lazy = true,
     },
     -- Configure any other settings here. See the documentation for more details.
-    install = { 
+    install = {
         -- colorscheme that will be used when installing plugins.
-        colorscheme = { 'everforest', "habamax" } 
+        colorscheme = { 'oxocarbon', "habamax" }
     },
-    checker = { 
+    checker = {
         -- automatically check for plugin updates
-        enabled = true 
+        enabled = true
     },
     ui = {
         -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.

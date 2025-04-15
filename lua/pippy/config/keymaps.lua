@@ -3,13 +3,13 @@ local keyopts = { noremap = true, silent = true }
 
 -- Disable Arrows
 local arrows = {
-  '<Up>', 
-  '<Down>', 
-  '<Left>', 
+  '<Up>',
+  '<Down>',
+  '<Left>',
   '<Right>',
-  '<S-Up>', 
-  '<S-Down>', 
-  '<S-Left>', 
+  '<S-Up>',
+  '<S-Down>',
+  '<S-Left>',
   '<S-Right>',
 }
 
@@ -18,3 +18,4 @@ for _, key in ipairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop
 -- Misc
 map('n', '-', function() vim.cmd('Ex') vim.cmd('doautocmd User NetrwEnter') end, keyopts)
 map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
+map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
