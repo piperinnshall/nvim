@@ -2,14 +2,12 @@ return {
     'prichrd/netrw.nvim',
     ft = 'netrw',
     opts = {
-        -- Put your configuration here, or leave the object empty to take the default
-        -- configuration.
         icons = {
-            symlink = '', -- Symlink icon (directory and file)
-            directory = '', -- Directory icon
-            file = '', -- File icon
+            symlink = '',
+            directory = '',
+            file = '',
         },
-        use_devicons = true, -- Uses nvim-web-devicons if true, otherwise use the file icon specified above
+        use_devicons = true,
         mappings = {},
     },
 }
