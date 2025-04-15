@@ -19,3 +19,15 @@ for _, key in ipairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop
 map('n', '-', function() vim.cmd('Ex') vim.cmd('doautocmd User NetrwEnter') end, keyopts)
 map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
 map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
+
+-- Files
+map('n', '<leader>ff', function() require('fzf-lua').files() end, opts)
+map('n', '<leader>fl', function() require('fzf-lua').live_grep() end, opts)
+map('n', '<leader>fg', function() require('fzf-lua').git_files() end, opts)
+map('n', '<leader>fd', function() require('fzf-lua').diagnostics_workspace() end, opts)
+map('n', '<leader>fp', function() require('fzf-lua').complete_path() end, opts)
+map('n', '<leader>fb', function() require('fzf-lua').complete_bline() end, opts)
+map('n', '<leader>fq', function() require('fzf-lua').quickfix() end, opts)
+map('n', '<leader>fj', function() require('fzf-lua').jumps() end, opts)
+map('n', '<leader>fc', function() require('fzf-lua').command_history() end, opts)
+map('n', '<leader>fs', function() require('fzf-lua').spell_suggest() end, opts)
