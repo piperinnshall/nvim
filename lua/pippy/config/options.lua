@@ -27,3 +27,5 @@ opt.incsearch = true
 opt.termguicolors = true
 
 opt.mouse = ''
+
+opt.completeopt = { 'menuone', 'noinsert', 'fuzzy' }

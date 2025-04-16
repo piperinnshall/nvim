@@ -1,9 +1,12 @@
 return {
-    'sainnhe/everforest',
-    name = 'everforest',
+    'neanias/everforest-nvim',
     lazy = false,
     config = function()
-        vim.o.background = "light"
+        require('everforest').setup({
+            background = 'hard',
+        })
+        vim.o.background = 'light'
         vim.cmd.colorscheme 'everforest'
-    end
+    end,
 }
+
