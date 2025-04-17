@@ -25,4 +25,10 @@ config['luals'] = {
         },
     },
 }
+config['nills'] = {
+    cmd = { 'nil' },
+    filetypes = { 'nix' },
+}
+
 enable('luals')
+enable('nills')
