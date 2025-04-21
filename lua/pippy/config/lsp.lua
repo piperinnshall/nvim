@@ -25,10 +25,15 @@ config['luals'] = {
         },
     },
 }
-config['nills'] = {
+config['nixls'] = {
     cmd = { 'nil' },
     filetypes = { 'nix' },
 }
+config['cls'] = {
+    cmd = { 'clangd' },
+    filetypes = { 'c' },
+}
 
 enable('luals')
-enable('nills')
+enable('nixls')
+enable('cls')
