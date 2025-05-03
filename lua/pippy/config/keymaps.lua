@@ -21,7 +21,7 @@ for _, key in ipairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop
 map('n', '-', function()
     vim.cmd('Ex')
     vim.cmd('doautocmd User NetrwEnter')
-end, keyopts)
+end, opts)
 map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
 map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
 
