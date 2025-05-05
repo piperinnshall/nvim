@@ -25,7 +25,6 @@ local netrw_focus = function()
     end
 end
 
-
 cmd('BufEnter', {
     group    = netrw,
     callback = netrw_track,
@@ -36,6 +35,8 @@ cmd('User', {
     pattern  = "NetrwEnter",
     callback = netrw_focus,
 })
+
+-- TreeSitter
 
 -- Lsp
 local lsp = au('LspGroup', {})
