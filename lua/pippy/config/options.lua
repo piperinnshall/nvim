@@ -1,15 +1,11 @@
 local g = vim.g
-local cmd = vim.cmd
 local opt = vim.opt
-
 
 g.maplocalleader = ' '
 g.mapleader = ' '
 
 g.netrw_banner = 0
 g.netrw_list_hide = '^\\./\\|\\../'
-
-cmd.colorscheme = 'lunaperche'
 
 opt.swapfile = false
 
@@ -33,5 +29,5 @@ opt.background = 'light'
 
 opt.mouse = ''
 
-
 opt.completeopt = { 'menuone', 'noinsert', 'fuzzy' }
+

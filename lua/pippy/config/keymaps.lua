@@ -38,7 +38,6 @@ map('n', '<leader>fc', function() require('fzf-lua').command_history() end, opts
 map('n', '<leader>fs', function() require('fzf-lua').spell_suggest() end, opts)
 
 -- Lsp
-map('i', '<Tab>', function() return fn.pumvisible() == 1 and '<C-y>' or '<Tab>' end, { expr = true })
 map('n', 'gl', function() vim.diagnostic.open_float() end, opts)
 map('n', '[d', function() vim.diagnostic.goto_prev() end, opts)
 map('n', ']d', function() vim.diagnostic.goto_next() end, opts)
