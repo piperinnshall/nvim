@@ -6,6 +6,7 @@ g.mapleader = ' '
 
 g.netrw_banner = 0
 g.netrw_list_hide = '^\\./\\|\\../'
+g.netrw_keepdir = 0
 
 opt.swapfile = false
 
@@ -30,4 +31,3 @@ opt.background = 'light'
 opt.mouse = ''
 
 opt.completeopt = { 'menuone', 'noinsert', 'fuzzy' }
-

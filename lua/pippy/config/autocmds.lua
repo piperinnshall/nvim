@@ -36,8 +36,6 @@ cmd('User', {
     callback = netrw_focus,
 })
 
--- TreeSitter
-
 -- Lsp
 local lsp = au('LspGroup', {})
 
@@ -70,7 +68,7 @@ local lsp_cmp = function(event)
 end
 
 local lsp_attach = function(event)
-    lsp_cmp(event)
+    -- lsp_cmp(event)
     lsp_map(event)
 end
 

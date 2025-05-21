@@ -14,7 +14,7 @@ config['luals'] = {
                 checkThirdParty = false,
                 library = {
                     vim.env.VIMRUNTIME,
-                    vim.fn.expand '~/Developer/lua/neovim',
+                    vim.fn.expand '~/Developer/lua',
                 },
             },
             diagnostics = {
