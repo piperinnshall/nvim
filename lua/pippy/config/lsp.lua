@@ -33,7 +33,12 @@ config['cls'] = {
     cmd = { 'clangd' },
     filetypes = { 'c' },
 }
+config['rustls'] = {
+    cmd = { 'rust-analyzer' },
+    filetypes = { 'rust' }
+}
 
 enable('luals')
 enable('nixls')
 enable('cls')
+enable('rustls')
