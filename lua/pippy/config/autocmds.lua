@@ -18,7 +18,8 @@ local netrw_focus = function()
     local lines = fn.getline(1, fn.line('$'))
     if type(lines) ~= 'table' then return end
     for i, name in ipairs(lines) do
-        if name == last_file then
+        local clean_name = name:gsub("[*/=@|]+$", "")
+        if clean_name == last_file then
             api.nvim_win_set_cursor(0, { i, 0 })
             return
         end
@@ -58,6 +59,7 @@ local lsp_map = function(event)
     map('n', 'gf', function() require('fzf-lua').lsp_finder() end, { buffer = event.buf })
 end
 
+-- For use with default nvim cmpletion - Blink.cmp is used currently
 local lsp_cmp = function(event)
     local client = assert(vim.lsp.get_client_by_id(event.data.client_id))
     if client:supports_method('textDocument/completion') then

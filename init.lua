@@ -1,1 +1,1 @@
-require 'pippy.config'
+require 'pippy.config.lazy'

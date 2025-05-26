@@ -1,5 +1,3 @@
-local api    = vim.api
-local fn     = vim.fn
 local map    = vim.keymap.set
 local opts   = { noremap = true, silent = true }
 

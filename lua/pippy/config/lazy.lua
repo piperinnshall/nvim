@@ -1,4 +1,3 @@
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -15,28 +14,23 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Setup lazy.nvim
-require("lazy").setup({
+require 'pippy.config.options'
+require 'pippy.config.keymaps'
+require 'pippy.config.autocmds'
+require 'pippy.config.lsp'
+
+require 'lazy'.setup({
     spec = {
-        -- import your plugins
         { import = "pippy.plugins" },
         { import = "pippy.plugins.ft" },
     },
     defaults = {
-        -- should plugins be lazy-loaded?
         lazy = true,
     },
-    -- Configure any other settings here. See the documentation for more details.
     install = {
-        -- colorscheme that will be used when installing plugins.
-        colorscheme = { 'delek', }
+        colorscheme = { 'tokyonight_day', }
     },
     checker = {
-        -- automatically check for plugin updates
         enabled = true
     },
-    ui = {
-        -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
-        border = "none",
-    }
 })
