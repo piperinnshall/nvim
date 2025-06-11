@@ -1,13 +1,14 @@
-local api         = vim.api
-local fn          = vim.fn
-local map         = vim.keymap.set
-local cmd         = api.nvim_create_autocmd
-local au          = api.nvim_create_augroup
+local api           = vim.api
+local fn            = vim.fn
+local map           = vim.keymap.set
+local cmd           = api.nvim_create_autocmd
+local au            = api.nvim_create_augroup
+local netrw         = au('NetrwGroup', { clear = true })
+local lsp           = au('LspGroup', {})
 
 -- Netrw
-local netrw       = au('NetrwGroup', { clear = true })
 
-local last_file   = ''
+local last_file = ''
 
 local netrw_track = function()
     local full = fn.expand('%:p')
@@ -26,19 +27,7 @@ local netrw_focus = function()
     end
 end
 
-cmd('BufEnter', {
-    group    = netrw,
-    callback = netrw_track,
-})
-
-cmd('User', {
-    group    = netrw,
-    pattern  = "NetrwEnter",
-    callback = netrw_focus,
-})
-
 -- Lsp
-local lsp = au('LspGroup', {})
 
 -- K is mapped to vim.lsp.buf.hover()
 -- "grn" is mapped in Normal mode to vim.lsp.buf.rename()
@@ -74,7 +63,21 @@ local lsp_attach = function(event)
     lsp_map(event)
 end
 
+
+-- Autocmd
+
+cmd('BufEnter', {
+    group       = netrw,
+    callback    = netrw_track,
+})
+
+cmd('User', {
+    pattern     = "NetrwEnter",
+    group       = netrw,
+    callback    = netrw_focus,
+})
+
 cmd('LspAttach', {
-    group = lsp,
-    callback = lsp_attach,
+    group       = lsp,
+    callback    = lsp_attach,
 })

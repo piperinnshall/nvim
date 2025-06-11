@@ -1,8 +1,4 @@
-local lsp = vim.lsp
-local config = lsp.config
-local enable = lsp.enable
-
-config['luals'] = {
+return {
     cmd = { 'lua-language-server' },
     filetypes = { 'lua' },
     settings = {
@@ -25,20 +21,3 @@ config['luals'] = {
         },
     },
 }
-config['nixls'] = {
-    cmd = { 'nil' },
-    filetypes = { 'nix' },
-}
-config['cls'] = {
-    cmd = { 'clangd' },
-    filetypes = { 'c' },
-}
-config['rustls'] = {
-    cmd = { 'rust-analyzer' },
-    filetypes = { 'rust' }
-}
-
-enable('luals')
-enable('nixls')
-enable('cls')
-enable('rustls')

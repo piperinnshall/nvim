@@ -1,1 +1,3 @@
-require 'pippy.config.lazy'
+require 'pippy.core.lazy'
+require 'pippy.core.lsp'
+
