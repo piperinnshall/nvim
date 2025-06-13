@@ -1,11 +1,17 @@
 return {
     'folke/tokyonight.nvim',
+    dependencies = {
+        'https://github.com/rktjmp/lush.nvim',
+
+        'anAcc22/sakura.nvim',
+    },
     lazy = false,
     priority = 1000,
     opts = {},
     config = function()
         vim.cmd[[
         colorscheme tokyonight
+        "colorscheme sakura
         hi Normal guibg=NONE ctermbg=NONE
         hi NormalNC guibg=NONE ctermbg=NONE
         hi SignColumn guibg=NONE ctermbg=NONE

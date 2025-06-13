@@ -2,6 +2,7 @@ local map    = vim.keymap.set
 local opts   = { noremap = true, silent = true }
 
 -- Disable Arrows
+
 local arrows = {
     '<Up>',
     '<Down>',
@@ -16,14 +17,16 @@ local arrows = {
 for _, key in ipairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop>', opts) end
 
 -- Misc
+
+map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
+map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
 map('n', '-', function()
     vim.cmd('Ex')
     vim.cmd('doautocmd User NetrwEnter')
 end, opts)
-map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
-map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
 
 -- Files
+
 map('n', '<leader>ff', function() require('fzf-lua').files() end, opts)
 map('n', '<leader>fl', function() require('fzf-lua').live_grep() end, opts)
 map('n', '<leader>fg', function() require('fzf-lua').git_files() end, opts)
