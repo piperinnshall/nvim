@@ -1,10 +1,5 @@
 return {
     'folke/tokyonight.nvim',
-    dependencies = {
-        'https://github.com/rktjmp/lush.nvim',
-
-        'anAcc22/sakura.nvim',
-    },
     lazy = false,
     priority = 1000,
     opts = {},

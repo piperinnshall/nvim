@@ -24,6 +24,7 @@ map('n', '-', function()
     vim.cmd('Ex')
     vim.cmd('doautocmd User NetrwEnter')
 end, opts)
+map('i', 'jk', '<Esc>', opts)
 
 -- Files
 
@@ -39,6 +40,7 @@ map('n', '<leader>fc', function() require('fzf-lua').command_history() end, opts
 map('n', '<leader>fs', function() require('fzf-lua').spell_suggest() end, opts)
 
 -- Lsp
+
 map('n', 'gl', function() vim.diagnostic.open_float() end, opts)
 map('n', '[d', function() vim.diagnostic.goto_prev() end, opts)
 map('n', ']d', function() vim.diagnostic.goto_next() end, opts)

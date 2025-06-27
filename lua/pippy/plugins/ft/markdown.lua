@@ -1,9 +1,9 @@
 return {
-    'MeanderingProgrammer/render-markdown.nvim',
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    'OXY2DEV/markview.nvim',
     ft = 'markdown',
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {},
+    opts = {
+        preview = {
+            icon_provider = 'mini',
+        },
+    },
 }
-

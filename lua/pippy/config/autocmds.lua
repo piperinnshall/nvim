@@ -38,28 +38,16 @@ end
 -- CTRL-S is mapped in Insert mode to vim.lsp.buf.signature_help()
 
 local lsp_map = function(event)
-    map('n', 'g=', function() vim.lsp.buf.format({ async = true }) end, { buffer = event.buf })
-    map('n', 'gI', function() require('fzf-lua').lsp_implementations() end, { buffer = event.buf })
+    map('n', 'grr', function() require('fzf-lua').lsp_references() end, { buffer = event.buf })
+    map('n', 'gra', function() require('fzf-lua').lsp_code_actions() end, { buffer = event.buf })
     map('n', 'gd', function() require('fzf-lua').lsp_definitions() end, { buffer = event.buf })
     map('n', 'gD', function() require('fzf-lua').lsp_declarations() end, { buffer = event.buf })
     map('n', 'go', function() require('fzf-lua').lsp_typedefs() end, { buffer = event.buf })
-    map('n', 'gR', function() require('fzf-lua').lsp_references() end, { buffer = event.buf })
-    map('n', 'ga', function() require('fzf-lua').lsp_code_actions() end, { buffer = event.buf })
     map('n', 'gf', function() require('fzf-lua').lsp_finder() end, { buffer = event.buf })
-end
-
--- For use with default nvim cmpletion - Blink.cmp is used currently
-local lsp_cmp = function(event)
-    local client = assert(vim.lsp.get_client_by_id(event.data.client_id))
-    if client:supports_method('textDocument/completion') then
-        local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-        client.server_capabilities.completionProvider.triggerCharacters = chars
-        vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
-    end
+    map('n', 'g=', function() vim.lsp.buf.format({ async = true }) end, { buffer = event.buf })
 end
 
 local lsp_attach = function(event)
-    -- lsp_cmp(event)
     lsp_map(event)
 end
 

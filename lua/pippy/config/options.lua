@@ -4,9 +4,15 @@ local opt = vim.opt
 g.maplocalleader = ' '
 g.mapleader = ' '
 
+g.have_nerd_font = true
+
 g.netrw_banner = 0
 g.netrw_list_hide = '^\\./\\|\\../'
 g.netrw_keepdir = 0
+
+g.undotree_WindowLayout = 3
+g.undotree_SplitWidth = 50
+g.undotree_DiffAutoOpen = 0
 
 opt.swapfile = false
 
@@ -29,5 +35,3 @@ opt.termguicolors = true
 opt.background = 'light'
 
 opt.mouse = ''
-
-opt.completeopt = { 'menuone', 'noinsert', 'fuzzy' }
