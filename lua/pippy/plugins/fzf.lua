@@ -1,7 +1,7 @@
 return {
     'ibhagwan/fzf-lua',
     event = 'VeryLazy',
-    pts = {
+    opts = {
         { 'borderless-full' }
     },
 }
