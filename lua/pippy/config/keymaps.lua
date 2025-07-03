@@ -1,5 +1,5 @@
-local map    = vim.keymap.set
-local opts   = { noremap = true, silent = true }
+local map  = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- Disable Arrows
 
@@ -16,19 +16,12 @@ local arrows = {
 
 for _, key in pairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop>', opts) end
 
--- Autopair
-
-
-for paren, _ in pairs(require 'utils.autopair'.list) do map('i', paren, require('utils.autopair').left(paren), opts) end
-map('i', '<space>', require 'utils.autopair'.space, opts)
-map('i', '<bs>', require 'utils.autopair'.backspace, opts)
-
-
 -- Misc
 
-map('i', 'jk', '<Esc>', opts)
 map('n', '-', require 'utils.netrw'.focus, opts)
+map('i', 'jk', '<Esc>', opts)
 map('n', '<Esc>', '<cmd>nohlsearch<cr>', opts)
+map('n', '<leader>rc', '<cmd>e $MYVIMRC<cr>', opts)
 map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
 map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
 
@@ -42,8 +35,8 @@ map({ 'n', 'v' }, '<leader>P', '"+P', opts)
 -- Lsp
 
 map('n', 'gl', vim.diagnostic.open_float, opts)
-map('n', '[d', vim.diagnostic.goto_prev, opts)
-map('n', ']d', vim.diagnostic.goto_next, opts)
+map('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
+map('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
 
 -- Files
 

@@ -3,10 +3,10 @@ local map         = vim.keymap.set
 local cmd         = api.nvim_create_autocmd
 local au          = api.nvim_create_augroup
 
--- Netrw
+-- Eob
 
-local netrw_cmd   = function()
-    require 'utils.netrw'.track()
+local fill_chars  = function()
+    vim.wo.fillchars = 'eob: '
 end
 
 -- Lsp
@@ -33,21 +33,21 @@ local lsp_attach  = function(event)
     lsp_map(event)
 end
 
--- Eob
-
-local fill_chars  = function()
-    vim.wo.fillchars = 'eob: '
-end
-
 -- Autocmd
 
+local eob_group   = au('EobGroup', { clear = true })
 local netrw_group = au('NetrwGroup', { clear = true })
 local lsp_group   = au('LspGroup', { clear = true })
-local eob_group   = au('EobGroup', { clear = true })
+
+cmd({ 'BufWinEnter', 'FileType' }, {
+    pattern  = { '*', 'netrw' },
+    group    = eob_group,
+    callback = fill_chars,
+})
 
 cmd('BufEnter', {
     group    = netrw_group,
-    callback = netrw_cmd,
+    callback = require 'utils.netrw'.track,
 })
 
 cmd('LspAttach', {
@@ -55,8 +55,3 @@ cmd('LspAttach', {
     callback = lsp_attach,
 })
 
-cmd({ 'BufWinEnter', 'FileType' }, {
-    pattern  = { '*', 'netrw' },
-    group    = eob_group,
-    callback = fill_chars,
-})

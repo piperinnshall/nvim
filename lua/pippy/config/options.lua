@@ -9,9 +9,10 @@ g.have_nerd_font        = true
 g.netrw_banner          = 0
 g.netrw_list_hide       = [[^\./\|\../]]
 -- g.netrw_keepdir         = 0
-g.netrw_winsize         = 30
+-- g.netrw_winsize         = 60
 g.netrw_localcopydircmd = 'cp -r'
 g.netrw_liststyle       = 4
+g.netrw_preview = 1
 
 g.undotree_WindowLayout = 3
 g.undotree_SplitWidth   = 50
