@@ -14,17 +14,36 @@ local arrows = {
     '<S-Right>',
 }
 
-for _, key in ipairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop>', opts) end
+for _, key in pairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop>', opts) end
+
+-- Autopair
+
+
+for paren, _ in pairs(require 'utils.autopair'.list) do map('i', paren, require('utils.autopair').left(paren), opts) end
+map('i', '<space>', require 'utils.autopair'.space, opts)
+map('i', '<bs>', require 'utils.autopair'.backspace, opts)
+
 
 -- Misc
 
+map('i', 'jk', '<Esc>', opts)
+map('n', '-', require 'utils.netrw'.focus, opts)
+map('n', '<Esc>', '<cmd>nohlsearch<cr>', opts)
 map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
 map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
-map('n', '-', function()
-    vim.cmd('Ex')
-    vim.cmd('doautocmd User NetrwEnter')
-end, opts)
-map('i', 'jk', '<Esc>', opts)
+
+-- Yank
+
+map({ 'n', 'v' }, '<leader>y', '"+y', opts)
+map({ 'n', 'v' }, '<leader>Y', '"+Y', opts)
+map({ 'n', 'v' }, '<leader>p', '"+p', opts)
+map({ 'n', 'v' }, '<leader>P', '"+P', opts)
+
+-- Lsp
+
+map('n', 'gl', vim.diagnostic.open_float, opts)
+map('n', '[d', vim.diagnostic.goto_prev, opts)
+map('n', ']d', vim.diagnostic.goto_next, opts)
 
 -- Files
 
@@ -38,9 +57,3 @@ map('n', '<leader>fq', function() require('fzf-lua').quickfix() end, opts)
 map('n', '<leader>fj', function() require('fzf-lua').jumps() end, opts)
 map('n', '<leader>fc', function() require('fzf-lua').command_history() end, opts)
 map('n', '<leader>fs', function() require('fzf-lua').spell_suggest() end, opts)
-
--- Lsp
-
-map('n', 'gl', function() vim.diagnostic.open_float() end, opts)
-map('n', '[d', function() vim.diagnostic.goto_prev() end, opts)
-map('n', ']d', function() vim.diagnostic.goto_next() end, opts)

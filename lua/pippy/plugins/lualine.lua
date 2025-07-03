@@ -1,20 +1,17 @@
+local custom = require 'lualine.themes.tokyonight'
+
+custom.normal.c.bg = 'None'
+
 return {
     'nvim-lualine/lualine.nvim',
     event = 'VeryLazy',
     opts = {
         options = {
             icons_enabled = true,
-            theme = 'tokyonight-day',
+            theme = custom,
             component_separators = { left = '', right = '' },
             section_separators = { left = '', right = '' },
-            disabled_filetypes = {
-                statusline = {},
-                winbar = {},
-            },
             ignore_focus = {},
-            always_divide_middle = true,
-            always_show_tabline = true,
-            globalstatus = false,
             refresh = {
                 statusline = 100,
                 tabline = 100,
@@ -43,3 +40,4 @@ return {
         extensions = {}
     },
 }
+
