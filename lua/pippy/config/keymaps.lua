@@ -20,8 +20,10 @@ for _, key in pairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop>
 
 map('n', '-', require 'utils.netrw'.focus, opts)
 map('i', 'jk', '<Esc>', opts)
+map('i', 'kj', '<Esc>', opts)
 map('n', '<Esc>', '<cmd>nohlsearch<cr>', opts)
 map('n', '<leader>rc', '<cmd>e $MYVIMRC<cr>', opts)
+map('n', '<leader>n','<cmd>e $HOME/Documents/Notes<cr>', opts)
 map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
 map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
 
