@@ -12,7 +12,7 @@ g.netrw_list_hide       = [[^\./\|\../]]
 -- g.netrw_winsize         = 60
 g.netrw_localcopydircmd = 'cp -r'
 g.netrw_liststyle       = 4
-g.netrw_preview = 1
+g.netrw_preview         = 1
 
 g.undotree_WindowLayout = 3
 g.undotree_SplitWidth   = 50
@@ -35,6 +35,9 @@ opt.scrolloff           = 8
 opt.hlsearch            = true
 opt.incsearch           = true
 
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
+
 opt.termguicolors       = true
 opt.background          = 'dark'
 
@@ -43,3 +46,5 @@ opt.showtabline         = 1
 opt.laststatus          = 3
 
 opt.mouse               = 'a'
+
+opt.shell               = '/etc/profiles/per-user/piperinnshall/bin/fish'

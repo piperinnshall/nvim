@@ -18,14 +18,11 @@ for _, key in pairs(arrows) do map({ 'n', 'v', 'i', 's', 'x', 'o' }, key, '<Nop>
 
 -- Misc
 
-map('n', '-', require 'utils.netrw'.focus, opts)
 map('i', 'jk', '<Esc>', opts)
 map('i', 'kj', '<Esc>', opts)
 map('n', '<Esc>', '<cmd>nohlsearch<cr>', opts)
 map('n', '<leader>rc', '<cmd>e $MYVIMRC<cr>', opts)
 map('n', '<leader>n','<cmd>e $HOME/Documents/Notes<cr>', opts)
-map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
-map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
 
 -- Yank
 
@@ -40,7 +37,15 @@ map('n', 'gl', vim.diagnostic.open_float, opts)
 map('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
 map('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
 
+-- Plugins
+
+map('n', '-', '<cmd>Oil<cr>', opts)
+map('n', '<leader>l', '<cmd>Lazy<cr>', opts)
+map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', opts)
+
 -- Files
+
+map('n', 'z=', function() require('fzf-lua').spell_suggest() end, opts)
 
 map('n', '<leader>ff', function() require('fzf-lua').files() end, opts)
 map('n', '<leader>fl', function() require('fzf-lua').live_grep() end, opts)
@@ -51,4 +56,3 @@ map('n', '<leader>fb', function() require('fzf-lua').complete_bline() end, opts)
 map('n', '<leader>fq', function() require('fzf-lua').quickfix() end, opts)
 map('n', '<leader>fj', function() require('fzf-lua').jumps() end, opts)
 map('n', '<leader>fc', function() require('fzf-lua').command_history() end, opts)
-map('n', '<leader>fs', function() require('fzf-lua').spell_suggest() end, opts)

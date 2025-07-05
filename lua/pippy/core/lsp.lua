@@ -1,13 +1,32 @@
-local lsp = vim.lsp
-local diagnostic = vim.diagnostic
-local enable = lsp.enable
-local config = diagnostic.config
-
-enable({
+vim.lsp.enable({
     'c',
     'lua',
     'nix',
     'rust',
 })
 
-config({})
+vim.diagnostic.config({
+    -- virtual_lines = true,
+    virtual_text = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        style = 'minimal',
+        border = "single",
+        focusable = false,
+        source = true,
+    },
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ",
+            [vim.diagnostic.severity.WARN]  = "󰀪 ",
+            [vim.diagnostic.severity.INFO]  = "󰋽 ",
+            [vim.diagnostic.severity.HINT]  = "󰌶 ",
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+            [vim.diagnostic.severity.WARN]  = "WarningMsg",
+        },
+    },
+})

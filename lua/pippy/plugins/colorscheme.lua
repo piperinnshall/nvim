@@ -1,18 +1,23 @@
-local highlights = {
-    "Normal",
-    "NormalNC",
-    "SignColumn",
-    "StatusLine",
-    "StatusLineNC",
-    "VertSplit",
-    "TabLine",
-    "TabLineFill",
-    "TabLineSel",
-    "Pmenu",
-    "PmenuSel",
-    "NeoTreeNormal",
-    "NeoTreeNormalNC",
-    "NeoTreeWinSeparator",
+local hl = {
+    'normal',
+    'normalnc',
+    'signcolumn',
+    'statusline',
+    'statuslinenc',
+    'vertsplit',
+    'tabline',
+    'tablinefill',
+    'tablinesel',
+    'pmenu',
+    'pmenusel',
+    'neotreenormal',
+    'neotreenormalnc',
+    'neotreewinseparator',
+    'diagnosticvirtualtextok',
+    'diagnosticvirtualtexthint',
+    'diagnosticvirtualtextinfo',
+    'diagnosticvirtualtextwarn',
+    'diagnosticvirtualtexterror',
 }
 
 return {
@@ -22,8 +27,12 @@ return {
     opts = {},
     config = function()
         vim.cmd [[ colorscheme tokyonight ]]
-        for _, group in ipairs(highlights) do
-            vim.api.nvim_set_hl(0, group, { bg = "none", ctermbg = "none" })
+        for _, g in ipairs(hl) do
+            local fg = vim.api.nvim_get_hl(0, { name = g, link = false }).fg
+            vim.api.nvim_set_hl(0, g, {
+                fg = fg,
+                bg = "NONE",
+            })
         end
     end,
 }
