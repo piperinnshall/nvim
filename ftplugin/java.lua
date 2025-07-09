@@ -1,6 +1,7 @@
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local project_dir = vim.env.HOME .. '/Developer/java/jdtls-workspace/' .. project_name
-local jdtls_dir = '/Users/piperinnshall/.local/share/nvim/mason/packages/jdtls'
+local project_dir = vim.env.HOME .. '/Developer/Java/jdtls-workspace/' .. project_name
+local jdtls_dir = '/opt/homebrew/opt/jdtls/libexec/'
+-- /Users/piperinnshall/.local/share/nvim/mason/packages/jdtls
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -23,15 +24,15 @@ local config = {
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
     -- 💀
-    -- find /nix/store -name "org.eclipse.equinox.launcher_*.jar"
-    '-jar', jdtls_dir ..            '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250331-1702.jar',
+    '-jar', jdtls_dir ..            -- '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250331-1702.jar',
+                                    '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250424-1814.jar',
          -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
          -- Must point to the                                                     Change this to
          -- eclipse.jdt.ls installation                                           the actual version
 
 
     -- 💀
-    '-configuration', jdtls_dir ..                      '/config_mac_arm',
+    '-configuration', jdtls_dir ..                          '/config_mac_arm',
                     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
                     -- Must point to the                      Change to one of `linux`, `win` or `mac`
                     -- eclipse.jdt.ls installation            Depending on your system.
@@ -39,7 +40,7 @@ local config = {
 
     -- 💀
     -- See `data directory configuration` section in the README
-    '-data', project_dir,
+    '-data', project_dir
   },
 
   -- 💀
