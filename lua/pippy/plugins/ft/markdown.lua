@@ -1,8 +1,7 @@
 return {
     'OXY2DEV/markview.nvim',
-    ft = 'markdown',
     lazy = false,
-    priority = 999,
+    priority = 49,
     opts = {
         preview = {
             icon_provider = 'mini',

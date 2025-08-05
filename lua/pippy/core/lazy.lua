@@ -20,8 +20,8 @@ require 'pippy.config.autocmds'
 
 require 'lazy'.setup({
     spec = {
-        { import = "pippy.plugins" },
         { import = "pippy.plugins.ft" },
+        { import = "pippy.plugins" },
     },
     defaults = {
         lazy = true,

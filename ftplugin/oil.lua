@@ -1,2 +1,4 @@
-vim.opt_local.rnu = false
-vim.opt_local.number = false
+local opt  = vim.opt_local
+
+opt.rnu    = false
+opt.number = false

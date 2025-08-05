@@ -1,4 +1,4 @@
-local custom = require 'lualine.themes.tokyonight'
+local custom = require 'lualine.themes.tokyonight-day'
 
 custom.normal.c.bg = 'None'
 
@@ -7,7 +7,6 @@ return {
     event = 'VeryLazy',
     opts = {
         options = {
-            icons_enabled = true,
             theme = custom,
             component_separators = { left = '', right = '' },
             section_separators = { left = '', right = '' },

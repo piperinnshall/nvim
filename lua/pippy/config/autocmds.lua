@@ -2,8 +2,6 @@ local api       = vim.api
 local map       = vim.keymap.set
 local cmd       = api.nvim_create_autocmd
 
--- Lsp
-
 -- K is mapped to vim.lsp.buf.hover()
 -- "grn" is mapped in Normal mode to vim.lsp.buf.rename()
 -- "grr" is mapped in Normal mode to vim.lsp.buf.references()
@@ -27,20 +25,12 @@ local lsp_map   = function(event)
     -- map('n', 'gf', function() require('fzf-lua').lsp_finder() end, { buffer = event.buf })
 end
 
--- Autocmd
-
 cmd('BufWinEnter', {
     callback = function()
         vim.wo.fillchars = 'eob: '
     end
 
 })
-
--- cmd({ "BufRead", "BufNewFile" }, {
---     callback = function(args)
---         pcall(vim.treesitter.start, args.buf)
---     end,
--- })
 
 cmd('LspAttach', {
     callback = lsp_map,
