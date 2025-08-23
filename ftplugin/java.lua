@@ -1,9 +1,3 @@
-local opt          = vim.opt_local
-
-opt.tabstop        = 2
-opt.softtabstop    = 2
-opt.shiftwidth     = 2
-
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local project_dir  = vim.env.HOME .. '/Developer/Java/jdtls-workspace/' .. project_name
 local jdtls_dir    = '/opt/homebrew/opt/jdtls/libexec/'
