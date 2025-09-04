@@ -4,7 +4,6 @@ vim.g.netrw_banner          = 0
 vim.g.undotree_WindowLayout = 3
 vim.g.undotree_DiffAutoOpen = 0
 vim.g.undotree_SplitWidth   = 50
-vim.g.everforest_background = 'hard'
 vim.o.swapfile              = false
 vim.o.wrap                  = false
 vim.o.number                = true
@@ -14,16 +13,19 @@ vim.o.smartindent           = true
 vim.o.hlsearch              = true
 vim.o.incsearch             = true
 vim.o.spell                 = true
+vim.opt.exrc                = true
+vim.opt.secure              = true
 vim.o.tabstop               = 2
 vim.o.shiftwidth            = 2
 vim.o.scrolloff             = 8
 vim.o.background            = 'light'
+vim.g.everforest_background = 'hard'
 vim.o.winborder             = 'rounded'
 vim.o.signcolumn            = 'yes'
 vim.o.fillchars             = 'eob: '
 vim.o.shell                 = '/etc/profiles/per-user/piperinnshall/bin/bash'
 
-vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'rust_analyzer', 'intelephsense' })
+vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'rust_analyzer' })
 
 vim.pack.add({ 'sainnhe/everforest' })
 vim.pack.add({ 'tpope/vim-surround' })
