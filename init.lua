@@ -24,7 +24,6 @@ vim.o.winborder             = 'rounded'
 vim.o.signcolumn            = 'yes'
 vim.o.fillchars             = 'eob: '
 vim.o.shell                 = '/etc/profiles/per-user/piperinnshall/bin/bash'
-vim.g.GIT_SSH_COMMAND       = "ssh -i ~/Documents/nwen243.pem"
 
 vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'rust_analyzer' })
 
