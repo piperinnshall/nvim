@@ -14,9 +14,9 @@ vim.o.hlsearch              = true
 vim.o.incsearch             = true
 vim.o.ignorecase            = true
 vim.o.smartcase             = true
-vim.o.spell                 = true
 vim.o.exrc                  = true
 vim.o.secure                = true
+vim.o.spell                 = true
 vim.o.tabstop               = 2
 vim.o.shiftwidth            = 2
 vim.o.scrolloff             = 8
@@ -28,21 +28,20 @@ vim.o.foldcolumn            = '1'
 vim.o.foldtext              = 'getline(v:foldstart)'
 vim.o.shell                 = '/etc/profiles/per-user/piperinnshall/bin/bash'
 vim.opt.fillchars           = {
-  eob = ' ',
-  fold = ' ',
-  foldclose = '>',
-  foldopen = '⌄',
+    eob = ' ',
+    fold = ' ',
+    foldclose = '>',
+    foldopen = '⌄',
 }
 
-vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'rust_analyzer' })
+vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'processing', 'rust_analyzer' })
 
 vim.pack.add({ 'sainnhe/everforest' })
-vim.pack.add({ 'tpope/vim-surround' })
-vim.pack.add({ 'mbbill/undotree' })
-vim.pack.add({ 'itchyny/calendar.vim' })
-vim.pack.add({ 'mfussenegger/nvim-jdtls' })
 vim.pack.add({ '/ibhagwan/fzf-lua' })
 vim.pack.add({ 'OXY2DEV/markview.nvim' })
+vim.pack.add({ 'mfussenegger/nvim-jdtls' })
+vim.pack.add({ 'mbbill/undotree' })
+vim.pack.add({ 'tpope/vim-surround' })
 
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>Ex<cr>')
@@ -50,6 +49,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 vim.keymap.set('n', '<C-c>', '<cmd>cclose<cr>')
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
+
 vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
 vim.keymap.set('n', '<C-p>', '<cmd>FzfLua files<cr>')
 vim.keymap.set('n', '<C-g>', '<cmd>FzfLua live_grep<cr>')
@@ -59,11 +59,11 @@ vim.keymap.set('n', 'gra', '<cmd>FzfLua lsp_code_actions<cr>')
 require 'fzf-lua'.setup({ 'borderless-full', winopts = { backdrop = 100 } })
 require 'markview'.setup({ preview = { hybrid_modes = { 'n', 'i' } } })
 
-vim.cmd [[ colorscheme everforest ]]
-vim.cmd [[ hi StatusLineNC guibg=none ]]
-vim.cmd [[ hi StatusLine guibg=none ]]
-vim.cmd [[ hi NormalFloat guibg=none ]]
-vim.cmd [[ hi FloatBorder guibg=none ]]
-vim.cmd [[ hi Folded guibg=none ]]
+vim.cmd [[ colo everforest ]]
+vim.cmd [[ hi StatusLineNC  guibg=none ]]
+vim.cmd [[ hi StatusLine    guibg=none ]]
+vim.cmd [[ hi NormalFloat   guibg=none ]]
+vim.cmd [[ hi FloatBorder   guibg=none ]]
+vim.cmd [[ hi Folded        guibg=none ]]
 
 require 'codeforces'

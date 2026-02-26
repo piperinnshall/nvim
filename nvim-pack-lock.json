@@ -1,0 +1,28 @@
+{
+  "plugins": {
+    "everforest": {
+      "rev": "4132e797f6ce555de53825b6ef3df0b618456703",
+      "src": "https://github.com/sainnhe/everforest"
+    },
+    "fzf-lua": {
+      "rev": "a13c5c500b60f076b7ae1ae5df3cd4b547418ca1",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "markview.nvim": {
+      "rev": "2d68c060ad4387d9895577af43c3ace41a80de5d",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
+    "nvim-jdtls": {
+      "rev": "4d77ff02063cf88963d5cf10683ab1fd15d072de",
+      "src": "https://github.com/mfussenegger/nvim-jdtls"
+    },
+    "undotree": {
+      "rev": "28f2f54a34baff90ea6f4a735ef1813ad875c743",
+      "src": "https://github.com/mbbill/undotree"
+    },
+    "vim-surround": {
+      "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
+      "src": "https://github.com/tpope/vim-surround"
+    }
+  }
+}
