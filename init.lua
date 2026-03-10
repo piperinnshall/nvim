@@ -1,5 +1,6 @@
 vim.g.maplocalleader        = ' '
 vim.g.mapleader             = ' '
+vim.g.everforest_background = 'hard'
 vim.g.netrw_banner          = 0
 vim.g.undotree_WindowLayout = 3
 vim.g.undotree_DiffAutoOpen = 0
@@ -22,8 +23,8 @@ vim.o.undofile              = true
 vim.o.tabstop               = 2
 vim.o.shiftwidth            = 2
 vim.o.scrolloff             = 8
+vim.o.updatetime            = 50
 vim.o.background            = 'light'
-vim.g.everforest_background = 'hard'
 vim.o.winborder             = 'rounded'
 vim.o.signcolumn            = 'yes'
 vim.o.foldcolumn            = '1'
@@ -53,9 +54,11 @@ vim.keymap.set('n', 'g=', function() vim.lsp.buf.format({ async = true }) end)
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
 
+vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
 vim.keymap.set('n', ']h', '<cmd>GitGutterNextHunk<cr>')
 vim.keymap.set('n', '[h', '<cmd>GitGutterPrevHunk<cr>')
-vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
+vim.keymap.set('n', '<C-s>', '<cmd>GitGutterStageHunk<cr>')
+vim.keymap.set('n', '<C-h>', '<cmd>GitGutterPreviewHunk<cr>')
 vim.keymap.set('n', '<C-p>', '<cmd>FzfLua files<cr>')
 vim.keymap.set('n', '<C-g>', '<cmd>FzfLua live_grep<cr>')
 vim.keymap.set('n', 'z=', '<cmd>FzfLua spell_suggest<cr>')
