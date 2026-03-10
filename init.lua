@@ -4,6 +4,7 @@ vim.g.netrw_banner          = 0
 vim.g.undotree_WindowLayout = 3
 vim.g.undotree_DiffAutoOpen = 0
 vim.g.undotree_SplitWidth   = 50
+vim.o.updatetime            = 50
 vim.o.swapfile              = false
 vim.o.wrap                  = false
 vim.o.number                = true
@@ -43,14 +44,17 @@ vim.pack.add({ 'OXY2DEV/markview.nvim' })
 vim.pack.add({ 'mfussenegger/nvim-jdtls' })
 vim.pack.add({ 'mbbill/undotree' })
 vim.pack.add({ 'tpope/vim-surround' })
+vim.pack.add({ 'vim-gitgutter' })
 
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>Ex<cr>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 vim.keymap.set('n', '<C-c>', '<cmd>cclose<cr>')
+vim.keymap.set('n', 'g=', function() vim.lsp.buf.format({ async = true }) end)
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
-vim.keymap.set('n', 'g=', function() vim.lsp.buf.format({ async = true }) end)
+vim.keymap.set('n', ']h', '<cmd>GitGutterNextHunk<cr>')
+vim.keymap.set('n', '[h', '<cmd>GitGutterPrevHunk<cr>')
 vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
 vim.keymap.set('n', '<C-p>', '<cmd>FzfLua files<cr>')
 vim.keymap.set('n', '<C-g>', '<cmd>FzfLua live_grep<cr>')
