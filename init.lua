@@ -52,6 +52,7 @@ vim.keymap.set('n', '<C-c>', '<cmd>cclose<cr>')
 vim.keymap.set('n', 'g=', function() vim.lsp.buf.format({ async = true }) end)
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
+
 vim.keymap.set('n', ']h', '<cmd>GitGutterNextHunk<cr>')
 vim.keymap.set('n', '[h', '<cmd>GitGutterPrevHunk<cr>')
 vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
