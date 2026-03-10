@@ -4,8 +4,8 @@ vim.g.everforest_background = 'hard'
 vim.g.netrw_banner          = 0
 vim.g.undotree_WindowLayout = 3
 vim.g.undotree_DiffAutoOpen = 0
+vim.g.gitgutter_map_keys    = 0
 vim.g.undotree_SplitWidth   = 50
-vim.o.updatetime            = 50
 vim.o.swapfile              = false
 vim.o.wrap                  = false
 vim.o.number                = true
@@ -39,9 +39,9 @@ vim.opt.fillchars           = {
 
 vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'processing', 'rust_analyzer' })
 
-vim.pack.add({ 'sainnhe/everforest' })
 vim.pack.add({ 'ibhagwan/fzf-lua' })
 vim.pack.add({ 'mfussenegger/nvim-jdtls' })
+vim.pack.add({ 'sainnhe/everforest' })
 vim.pack.add({ 'mbbill/undotree' })
 vim.pack.add({ 'tpope/vim-surround' })
 vim.pack.add({ 'vim-gitgutter' })
