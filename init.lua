@@ -40,7 +40,6 @@ vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'processing', 'rust_analyzer' })
 
 vim.pack.add({ 'sainnhe/everforest' })
 vim.pack.add({ 'ibhagwan/fzf-lua' })
-vim.pack.add({ 'OXY2DEV/markview.nvim' })
 vim.pack.add({ 'mfussenegger/nvim-jdtls' })
 vim.pack.add({ 'mbbill/undotree' })
 vim.pack.add({ 'tpope/vim-surround' })
@@ -62,7 +61,6 @@ vim.keymap.set('n', 'z=', '<cmd>FzfLua spell_suggest<cr>')
 vim.keymap.set('n', 'gra', '<cmd>FzfLua lsp_code_actions<cr>')
 
 require 'fzf-lua'.setup({ 'borderless-full', winopts = { backdrop = 100 } })
-require 'markview'.setup({ preview = { hybrid_modes = { 'n', 'i' } } })
 
 vim.cmd [[ colo everforest ]]
 vim.cmd [[ hi StatusLineNC  guibg=none ]]
