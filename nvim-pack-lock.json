@@ -20,6 +20,10 @@
       "rev": "28f2f54a34baff90ea6f4a735ef1813ad875c743",
       "src": "https://github.com/mbbill/undotree"
     },
+    "vim-gitgutter": {
+      "rev": "0acb772e76064cc406664ab595b58b3fac76488a",
+      "src": "https://github.com/airblade/vim-gitgutter"
+    },
     "vim-surround": {
       "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
       "src": "https://github.com/tpope/vim-surround"
