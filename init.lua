@@ -17,6 +17,7 @@ vim.o.smartcase             = true
 vim.o.exrc                  = true
 vim.o.secure                = true
 vim.o.spell                 = true
+vim.o.undofile              = true
 vim.o.tabstop               = 2
 vim.o.shiftwidth            = 2
 vim.o.scrolloff             = 8
@@ -37,7 +38,7 @@ vim.opt.fillchars           = {
 vim.lsp.enable({ 'clangd', 'lua_ls', 'nil_ls', 'processing', 'rust_analyzer' })
 
 vim.pack.add({ 'sainnhe/everforest' })
-vim.pack.add({ '/ibhagwan/fzf-lua' })
+vim.pack.add({ 'ibhagwan/fzf-lua' })
 vim.pack.add({ 'OXY2DEV/markview.nvim' })
 vim.pack.add({ 'mfussenegger/nvim-jdtls' })
 vim.pack.add({ 'mbbill/undotree' })
@@ -49,9 +50,10 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 vim.keymap.set('n', '<C-c>', '<cmd>cclose<cr>')
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
-
+vim.keymap.set('n', 'g=', function() vim.lsp.but.format({ async = true}) end)
 vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
 vim.keymap.set('n', '<C-p>', '<cmd>FzfLua files<cr>')
+vim.keymap.set('n', '<C-p>', '<cmd>FzfLua files style=borderless-full<cr>')
 vim.keymap.set('n', '<C-g>', '<cmd>FzfLua live_grep<cr>')
 vim.keymap.set('n', 'z=', '<cmd>FzfLua spell_suggest<cr>')
 vim.keymap.set('n', 'gra', '<cmd>FzfLua lsp_code_actions<cr>')
@@ -65,5 +67,3 @@ vim.cmd [[ hi StatusLine    guibg=none ]]
 vim.cmd [[ hi NormalFloat   guibg=none ]]
 vim.cmd [[ hi FloatBorder   guibg=none ]]
 vim.cmd [[ hi Folded        guibg=none ]]
-
-require 'codeforces'
